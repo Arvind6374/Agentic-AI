@@ -1,88 +1,139 @@
-Day 2 – LLM Models, Privacy, Tokenization & Prompting (Simple Notes)
-✅ What I Learned Today
-1. Types of LLMs
+# Agentic AI – Day 2
 
-Closed-Source Models → GPT-4, Gemini
+A continuation into understanding the LLM ecosystem, choosing the right model, handling PII safely, and learning prompt engineering.
+This module focuses on LLM types, privacy concerns, cost/latency, batch vs real-time processing, and hands-on work with tools like HuggingFace and Ollama.
 
-Very powerful
+---
 
-Cost per token
+## 🚀 Day 2 Overview
 
-Data privacy risk
+### ✔ Types of LLMs
 
-Open-Source Models → Llama 3, Mistral, Gamma
+#### 🔒 Closed-Source Models (API-Based)
 
-Free to run locally
+Examples: GPT-4, Gemini
 
-Good for projects with sensitive data
+* Highly powerful
+* Require API keys
+* Per-token cost
+* Data privacy concerns
 
-2. PII (Personal Identifiable Information)
+#### 🟩 Open-Source Models (Local)
 
-Anything that identifies a person
-Examples: Aadhaar, biometrics, phone number, address
+Examples: Llama 3, Mistral, Gamma
 
-If data has PII → use local models OR remove PII before sending to API
+* Free to run locally
+* Full data control
+* Ideal for sensitive data
+* Need sufficient CPU/GPU hardware
 
-3. Batch vs Real-Time Processing
+---
 
-Batch → No urgent output
-Example: summarizing yesterday’s 10,000 news articles
+## 🔐 Understanding PII (Personal Identifiable Information)
 
-Real-Time → Immediate response
-Example: travel chatbot answering user questions instantly
+PII includes any information that identifies a person.
+Examples:
 
-4. Cost & Latency
+* Aadhaar number
+* Biometrics
+* Phone number
+* Email / address
+* Medical data
 
-Closed-source models charge based on tokens
+➡ When PII is present → **use local models** or **redact PII before sending to APIs**.
 
-Open-source models only need laptop/PC power
+---
 
-Bigger model = slower and needs more hardware
+## 🕒 Batch vs Real-Time Processing
 
-5. Prompt Engineering (ROLES Method)
+### 📦 Batch Processing
 
-A simple way to write better prompts:
+* Works on historical data
+* Not time-critical
+* Example: Summarizing yesterday’s 10,000 news articles
 
-R – Role → What role should AI take? (teacher, developer, etc.)
+### ⚡ Real-Time Processing
 
-O – Objective → What do you want? (write, explain, summarize)
+* Instant responses required
+* Example: Travel chatbot
+* Best handled using fast API models (Gemini / GPT)
 
-L – Limitations → Word limit / rules
+---
 
-E – Examples → Give sample input-output
+## 💸 Cost & Latency
 
-S – Style → Format (JSON, table, bullet points)
+* Closed-source models → token-based pricing
+* Open-source models → free, hardware dependent
+* Larger models → slower + require more memory
 
-6. Advanced Prompt Techniques
+---
 
-Chain of Thought → “Think step by step”
+## ✍️ Prompt Engineering (ROLES Method)
 
-Self-Consistency → AI gives multiple answers → best one chosen
+A structured method for creating effective prompts:
 
-7. Hands-On Setup
+* **R – Role:** Define AI’s behavior
+* **O – Objective:** Task to be performed
+* **L – Limitations:** Rules, constraints, word limits
+* **E – Examples:** Few-shot examples to guide behavior
+* **S – Style:** Output format (Markdown, JSON, table, etc.)
 
-Created PyCharm project with Python 3.12
+---
 
-Added .env file for API key
+## 🧠 Advanced Prompt Techniques
 
-Installed packages from requirements.txt
+### 🧩 Chain of Thought
 
-Used Ollama to download and test local models (Gamma 3 / Llama 3)
+Ask the model to **think step-by-step** for better reasoning.
 
-8. Use-Case Examples
+### 🔁 Self-Consistency
 
-Legal Contracts (Sensitive) → Use local models
+Model generates multiple reasoning paths → best one selected.
 
-Travel Chatbot (Public) → Use API models
+---
 
-Large Batch Summaries → Use lightweight open-source models
+## 🛠 Hands-On Setup
 
-📂 Tools Used Today
+### 🤖 Running Local Models with Ollama
 
-PyCharm
+1. Install Ollama: [https://ollama.com](https://ollama.com)
+2. Run a model:
 
-Google Colab
+   ```bash
+   ollama run llama3 "hi"
+   ```
 
-Hugging Face (model details)
+Recommended lightweight models:
 
-Ollama (run local models)
+* Gamma 3 (1B)
+* Llama 3 small variants
+
+---
+
+### 📘 Exploring HuggingFace
+
+Reviewed:
+
+* Model configs
+* Tokenizer information
+* Sample usage code
+* Model sizes and capabilities
+
+---
+
+## 🎯 Use-Case Scenarios Discussed
+
+* **Legal Contracts (Sensitive Data)** → Use local open-source models
+* **Travel Chatbot (Public Use)** → Use Gemini / GPT APIs
+* **Batch News Summaries (Large Volume)** → Use lightweight open-source models
+
+---
+
+## 🧰 Tools Used Today
+
+* PyCharm
+* Google Colab
+* HuggingFace
+* Ollama
+
+---

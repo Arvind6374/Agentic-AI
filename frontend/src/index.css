@@ -1,0 +1,48 @@
+:root {
+  --bg-base: #050709;
+  --bg-1: #0A0C0F;
+  --bg-2: #0F1318;
+  --bg-3: #141A22;
+  --bg-4: #1A2330;
+  --amber: #E8922A;
+  --amber-lo: rgba(232,146,42,0.10);
+  --copper: #C4601A;
+  --gold: #F4B84A;
+  --ocean: #4A7A9B;
+  --cyan: #7FC4D4;
+  --mist: #B8CDD8;
+  --text: #EEE5D6;
+  --text-2: #8FA4B2;
+  --text-3: #3A4F5E;
+  --border: rgba(232,146,42,0.08);
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(232,146,42,0.3);
+  color: var(--text);
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(232,146,42,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(232,146,42,0.3); }
